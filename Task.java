@@ -1,18 +1,25 @@
-package com.example.taskservice.model;
+package com.example.taskservice;
 
-public;
-    private String title;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-    public Task() {}
-
-    public Task(String id, String title) {
-        this.id = id;
-        this.title = title;
+@SpringBootApplication
+public class TaskServiceApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(TaskServiceApplication.class, args);
     }
-
-    public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
-
-    public String getTitle() { return title; }
-    public void setTitle(String title) { this.title = title; }
 }
+ inside `<build>`:
+
+```xml
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <mainClass>com.example.taskservice.TaskServiceApplication</mainClass>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
